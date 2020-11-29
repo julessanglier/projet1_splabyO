@@ -46,7 +46,7 @@ def Joueur(nom, couleur, reserve_initiale=20, surface=0, type_joueur='O', objet=
     :param ia:  une fonction indiquant quelle fonction appeler pour lancer l'IA associée à un joueur de type Ordinateur
     :return: le joueur possédant les caractéristiques passées en paramètre.
     """
-    ...
+    return {'nom': nom, 'couleur': couleur, 'reserve': reserve_initiale, 'surface': surface, 'type': type_joueur, 'objet': objet, 'temps_restant': temps_restant, 'ia': ia}
 
 def ajouter_objet(joueur, objet, temps=15):
     """
@@ -57,7 +57,8 @@ def ajouter_objet(joueur, objet, temps=15):
     :param temps: le temps de validité de l'objet
     :return: la fonction ne retourne rien mais modifie le joueur
     """
-    ...
+    joueur['objet'] = objet
+    joueur['temps_restant'] = temps
 
 def mise_a_jour_temps(joueur):
     """
@@ -67,7 +68,10 @@ def mise_a_jour_temps(joueur):
     :param joueur: le joueur à modifier
     :return: la fonction ne retourne rien mais modifie le joueur
     """
-    ...
+    joueur['temps_restant'] -= 1
+    if joueur['temps_restant'] == 0:
+        joueur['objet'] = 0
+
 
 
 def set_type_joueur(joueur, type_joueur):
@@ -78,7 +82,7 @@ def set_type_joueur(joueur, type_joueur):
     :param type_joueur: un caractère 'H' pour humain 'O' pour ordinateur
     :return: la fonction ne retourne rien mais modifie le joueur
     """
-    ...
+    joueur['type'] = type_joueur
 
 
 def get_type_joueur(joueur):
@@ -88,7 +92,7 @@ def get_type_joueur(joueur):
     :param joueur: le joueur
     :return: résultat un caratère 'H' pour humain et 'O' pour ordinateur
     """
-    ...
+    return joueur['type']
 
 
 def set_fonction_ia(joueur, la_fonction):
@@ -100,7 +104,7 @@ def set_fonction_ia(joueur, la_fonction):
                         retourne l
     :return: la fonction ne retourne rien mais modifie le joueur
     """
-    ...
+    joueur['ia'] = la_fonction
 
 def jouer_ia(joueur, etat_jeu):
     """
@@ -110,7 +114,7 @@ def jouer_ia(joueur, etat_jeu):
     :param etat_jeu: un dictionnaire donnant l'état du jeu
     :return: un ordre pour le joueur sous la forme d'une chaine de caractères
     """
-    ...
+    joueur['ia'](etat_jeu)
 
 
 def set_surface(joueur, surface):
@@ -121,7 +125,7 @@ def set_surface(joueur, surface):
     :param surface: un entier positif ou nul
     :return: la fonction ne retourne rien mais modifie le joueur
     """
-    ...
+    joueur['surface'] = surface
 
 
 def get_surface(joueur):
@@ -131,7 +135,7 @@ def get_surface(joueur):
     :param joueur: le joueur
     :return: un entier positif ou nul
     """
-    ...
+    return joueur['surface']
 
 
 def get_objet_joueur(joueur):
@@ -141,7 +145,7 @@ def get_objet_joueur(joueur):
     :param joueur: le joueur
     :return: un entier positif ou nul (0 indique que le joueur ne possède pas d'objet)
     """
-    ...
+    return joueur['objet']
 
 
 def get_couleur_joueur(joueur):
@@ -151,7 +155,7 @@ def get_couleur_joueur(joueur):
     :param joueur: le joueur
     :return: une chaine de caractère indiquant la couleur du joueur
     """
-    ...
+    return joueur['couleur']
 
 
 def get_nom_joueur(joueur):
@@ -161,7 +165,7 @@ def get_nom_joueur(joueur):
     :param joueur: le joueur
     :return: une chaine de caractère indiquant le nom du joueur
     """
-    ...
+    return joueur['nom']
 
 
 def get_reserve_peinture(joueur):
@@ -171,7 +175,7 @@ def get_reserve_peinture(joueur):
     :param joueur: le joueur
     :return: un entier indiquant le nombre d'unités de peintures possédé par le joueur
     """
-    ...
+    return joueur['reserve']
 
 
 def get_temps_restant(joueur):
@@ -182,7 +186,7 @@ def get_temps_restant(joueur):
     :return: un entier indiquant le temps restant pour l'objet que possède le joueur
              O si le joueur ne possède pas d'objet
     """
-    ...
+    return joueur['temps_restant']
 
 
 def ajouter_peinture(joueur, nb_unites):
@@ -194,8 +198,10 @@ def ajouter_peinture(joueur, nb_unites):
     :param nb_unites:  un entier relatif (positif ou négatif)
     :return: la fonction ne retourne rien mais modifie le joueur
     """
-    ...
+    if joueur['reserve'] + nb_unites < 0:
+        raise("Erreur, réserve de peinture négative après ajout.")
 
+    joueur['reserve'] += nb_unites
 
 def comparer(joueur1, joueur2):
     """
@@ -205,4 +211,25 @@ def comparer(joueur1, joueur2):
     :param joueur2: un autre joueur
     :return: -1 si joueur1<joueur2, 1 si joueur1>joueur2 et 0 si les deux joueurs ont la même surface et la même réserve
     """
-    ...
+    resultat = 0
+    surface_j1 = get_surface(joueur1)
+    surface_j2 = get_surface(joueur2)
+
+    if surface_j1 < surface_j2:
+        resultat = -1
+    else:
+        if surface_j1 > surface_j2:
+            resultat = 1
+        else: #cas d'égalité des surfaces
+            reserve_j1 = get_reserve_peinture(joueur1)
+            reserve_j2 = get_reserve_peinture(joueur2)
+            if reserve_j1 < reserve_j2:
+                resultat = -1
+            else:
+                if reserve_j1 > reserve_j2:
+                    resultat = 1
+                else:
+                    resultat = 0
+
+
+    return resultat
