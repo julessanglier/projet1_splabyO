@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>plateau &mdash; Documentation Splaby&#39;O 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="participants" href="participants.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contenus:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dev</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="carte.html">carte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joueur.html">joueur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labyrinthe.html">labyrinthe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrice.html">matrice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="participants.html">participants</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">plateau</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Splaby'O</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">dev</a> &raquo;</li>
+        
+      <li>plateau</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/plateau.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plateau">
+<h1>plateau<a class="headerlink" href="#plateau" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Projet Python 2020-2021 de 1ere année et AS DUT Informatique Orléans</p>
+<dl class="py function">
+<dt id="plateau.Plateau">
+<code class="sig-name descname">Plateau</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">les_joueurs</span></em>, <em class="sig-param"><span class="n">taille</span><span class="o">=</span><span class="default_value">7</span></em>, <em class="sig-param"><span class="n">nb_objets</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plateau.Plateau" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>créer un nouveau plateau contenant les joueurs passés en paramètres</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>les_joueurs</strong> – la liste des joueurs participant à la partie</p></li>
+<li><p><strong>taille</strong> – un entier qqui donne la taille du labyrinthe</p></li>
+<li><p><strong>nb_objets</strong> – un entier qui indique combien d’objets différents existent</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p><p>un couple contenant
+* une matrice de taille taillextaill représentant un plateau de labyrinthe où les cartes</p>
+<blockquote>
+<div><p>ont été placée de manière aléatoire</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>la carte amovible qui n’a pas été placée sur le plateau</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="plateau.accessible">
+<code class="sig-name descname">accessible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plateau</span></em>, <em class="sig-param"><span class="n">lig_depart</span></em>, <em class="sig-param"><span class="n">col_depart</span></em>, <em class="sig-param"><span class="n">lig_arrivee</span></em>, <em class="sig-param"><span class="n">col_arrivee</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plateau.accessible" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>indique si il y a un chemin entre la case lig_depart,col_depart et la case lig_arrivee,col_arrivee du labyrinthe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plateau</strong> – le plateau considéré</p></li>
+<li><p><strong>lig_depart</strong> – la ligne de la case de départ</p></li>
+<li><p><strong>col_depart</strong> – la colonne de la case de départ</p></li>
+<li><p><strong>lig_arrivee</strong> – la ligne de la case d’arrivée</p></li>
+<li><p><strong>col_arrivee</strong> – la colonne de la case d’arrivée</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un boolean indiquant s’il existe un chemin entre la case de départ
+et la case d’arrivée</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="plateau.affiche_plateau">
+<code class="sig-name descname">affiche_plateau</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plateau</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plateau.affiche_plateau" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>affichage redimentaire d’un plateau</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>plateau</strong> – le plateau</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>rien mais affiche le plateau</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="plateau.creer_cartes_amovibles">
+<code class="sig-name descname">creer_cartes_amovibles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#plateau.creer_cartes_amovibles" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>fonction utilitaire qui permet de créer les cartes amovibles du jeu
+la fonction retourne la liste, mélangée aléatoirement, des cartes ainsi créées</p>
+<dl class="field-list simple">
+<dt class="field-odd">Retourne</dt>
+<dd class="field-odd"><p>la liste mélangée aléatoirement des cartes amovibles créees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="plateau.get_coordonnees_joueur">
+<code class="sig-name descname">get_coordonnees_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plateau</span></em>, <em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plateau.get_coordonnees_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne les coordonnées sous la forme (lig,col) du joueur passé en paramètre</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plateau</strong> – le plateau considéré</p></li>
+<li><p><strong>joueur</strong> – le joueur à trouver</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un couple d’entiers donnant les coordonnées du joueur ou None si le joueur n’est pas sur le plateau</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="plateau.nb_cartes_par_couleur">
+<code class="sig-name descname">nb_cartes_par_couleur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plateau</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plateau.nb_cartes_par_couleur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>calcule le nombre de cartes coloriées pour chaque couleur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>plateau</strong> – le plateau</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un dictionnaire contenant pour chaque couleur présente sur le plateau le nombre de carte de cette couleur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="plateau.passage_plateau">
+<code class="sig-name descname">passage_plateau</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plateau</span></em>, <em class="sig-param"><span class="n">lig</span></em>, <em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plateau.passage_plateau" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>indique si il y a bien un passage dans le direction passée en paramètre à partir de la position
+lig,col sur le plateau. La fonction retourne None si il n’y a pas de passage ou les coordonnées
+de la case où on arrive en prenant le passage s’il y en a un</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plateau</strong> – le plateau</p></li>
+<li><p><strong>lig</strong> – un entier donnant le numéro de la ligne</p></li>
+<li><p><strong>col</strong> – un entier donnant le numéro de la colonne</p></li>
+<li><p><strong>direction</strong> – un caractère “N”, “S”, “O” ou “E” indiquant la direction où on veut aller</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>None s’il n’y a pas de passage possible
+(x,y) les coordonnées où on arrive en prenant le passage s’il existe (un couple d’entiers)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="plateau.peindre_direction_couleur">
+<code class="sig-name descname">peindre_direction_couleur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plateau</span></em>, <em class="sig-param"><span class="n">lig</span></em>, <em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">direction</span></em>, <em class="sig-param"><span class="n">couleur</span></em>, <em class="sig-param"><span class="n">reserve_peinture</span></em>, <em class="sig-param"><span class="n">traverser_mur</span></em>, <em class="sig-param"><span class="n">tester</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plateau.peindre_direction_couleur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Permet de peindre d’un couleur les cases accessibles à partir de lig,col dans la direction direction avec la reserve
+de peinture disponible.
+La fonction retourne la liste des joueurs touchés et le nombre de cases peintes.
+Attention si le paramètre tester est à True les cases ne sont pas réellement peintes (on teste juste combien de
+cases seraient peintes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plateau</strong> – un plateau</p></li>
+<li><p><strong>lig</strong> – ligne de départ</p></li>
+<li><p><strong>col</strong> – colonne de départ</p></li>
+<li><p><strong>direction</strong> – un caractère valeur “N”,”E”,”S” ou “O”</p></li>
+<li><p><strong>couleur</strong> – une couleur de peinture</p></li>
+<li><p><strong>reserve_peinture</strong> – le nombre maximum de cases pouvant être peinte</p></li>
+<li><p><strong>traverser_mur</strong> – booléen permettant de traverser une fois un mur (pouvoir du pistolet)</p></li>
+<li><p><strong>tester</strong> – booléen indiquant si on souhaite vraiment peindre les cases ou juste tester combien on peut en peindre</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un couple contenant la liste des joueurs touchés lors de l’action de peindre et le nombre de cases peintes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="plateau.poser_les_objets">
+<code class="sig-name descname">poser_les_objets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plateau</span></em>, <em class="sig-param"><span class="n">nb_joueurs</span></em>, <em class="sig-param"><span class="n">nb_objets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#plateau.poser_les_objets" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>cette fonction va poser de manière aléatoire les objets sur le plateau, il y aura un objet de chaque types par joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plateau</strong> – le plateau</p></li>
+<li><p><strong>nb_joueurs</strong> – un entier indiquant le nombre de joueurs participant à la partie</p></li>
+<li><p><strong>nb_objets</strong> – un entier le nombre de type d’objets différents</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien mais modifie le plateau</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="participants.html" class="btn btn-neutral" title="participants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sébastien Limet.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'fr',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>joueur &mdash; Documentation Splaby&#39;O 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="labyrinthe" href="labyrinthe.html" />
+    <link rel="prev" title="carte" href="carte.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contenus:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dev</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="carte.html">carte</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">joueur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labyrinthe.html">labyrinthe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrice.html">matrice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="participants.html">participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plateau.html">plateau</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Splaby'O</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">dev</a> &raquo;</li>
+        
+      <li>joueur</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/joueur.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="joueur">
+<h1>joueur<a class="headerlink" href="#joueur" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Projet Python 2020-2021 de 1ere année et AS DUT Informatique Orléans</p>
+<dl class="py function">
+<dt id="joueur.Joueur">
+<code class="sig-name descname">Joueur</code><span class="sig-paren">(</span><em class="sig-param">nom</em>, <em class="sig-param">couleur</em>, <em class="sig-param">reserve_initiale=20</em>, <em class="sig-param">surface=0</em>, <em class="sig-param">type_joueur='O'</em>, <em class="sig-param">objet=0</em>, <em class="sig-param">temps_restant=0</em>, <em class="sig-param">ia=&lt;function dummy_ai&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.Joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>creer un nouveau joueur portant le nom passé en paramètre.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nom</strong> – une chaine de caractères donnant le nom du joueur</p></li>
+<li><p><strong>couleur</strong> – une chaine de caractères donnant donnant la couleur du joueur</p></li>
+<li><p><strong>reserve_initiale</strong> – un entier indiquant la réserve de peinture du joueur</p></li>
+<li><p><strong>surface</strong> – un entier qui indique combien de case du labyrinthe sont peintes de la couleur du joueur</p></li>
+<li><p><strong>type_joueur</strong> – un caractère “H” pour humain “O” pour ordinateur</p></li>
+<li><p><strong>objet</strong> – un entier compris entre 0 et 3 indiquant l’objet possédé actuellement par le joueur (0 =&gt; pas d’objet)</p></li>
+<li><p><strong>temps_restant</strong> – le nombre de tours restant avant que l’objet possédé par le joueur est encore valide</p></li>
+<li><p><strong>ia</strong> – une fonction indiquant quelle fonction appeler pour lancer l’IA associée à un joueur de type Ordinateur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>le joueur possédant les caractéristiques passées en paramètre.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.ajouter_objet">
+<code class="sig-name descname">ajouter_objet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em>, <em class="sig-param"><span class="n">objet</span></em>, <em class="sig-param"><span class="n">temps</span><span class="o">=</span><span class="default_value">15</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.ajouter_objet" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>ajoute un objet au joueur et initialise le temps de validité de cet objet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joueur</strong> – le joueur à modifier</p></li>
+<li><p><strong>objet</strong> – un entier strictement positif indiquant l’objet attribué au joueur</p></li>
+<li><p><strong>temps</strong> – le temps de validité de l’objet</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie le joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.ajouter_peinture">
+<code class="sig-name descname">ajouter_peinture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em>, <em class="sig-param"><span class="n">nb_unites</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.ajouter_peinture" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>ajoute ou enlève des unités de peintures dans la réserve du joueur
+ATTENTION la plus petite valeur pour la réserve est 0 et ne peut donc jamais devenir négative</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joueur</strong> – le joueur</p></li>
+<li><p><strong>nb_unites</strong> – un entier relatif (positif ou négatif)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie le joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.comparer">
+<code class="sig-name descname">comparer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur1</span></em>, <em class="sig-param"><span class="n">joueur2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.comparer" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>compare deux joueurs en fonction de la surface qu’il possède et en cas d’égalité, en fonction de la réserve</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joueur1</strong> – un joueur</p></li>
+<li><p><strong>joueur2</strong> – un autre joueur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>-1 si joueur1&lt;joueur2, 1 si joueur1&gt;joueur2 et 0 si les deux joueurs ont la même surface et la même réserve</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.dummy_ai">
+<code class="sig-name descname">dummy_ai</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">laby_dico</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.dummy_ai" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>IA aléatoire mise par défaut sur les joueurs automatiques</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>laby_dico</strong> – ce paramètre n’est pas utilisé</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un ordre pour le joueur sous la forme d’une chaine de caractères</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.get_couleur_joueur">
+<code class="sig-name descname">get_couleur_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.get_couleur_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne la couleur du joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>joueur</strong> – le joueur</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>une chaine de caractère indiquant la couleur du joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.get_nom_joueur">
+<code class="sig-name descname">get_nom_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.get_nom_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le nom du joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>joueur</strong> – le joueur</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>une chaine de caractère indiquant le nom du joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.get_objet_joueur">
+<code class="sig-name descname">get_objet_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.get_objet_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne l’objet possédé par le joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>joueur</strong> – le joueur</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier positif ou nul (0 indique que le joueur ne possède pas d’objet)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.get_reserve_peinture">
+<code class="sig-name descname">get_reserve_peinture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.get_reserve_peinture" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le nombre de points du joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>joueur</strong> – le joueur</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier indiquant le nombre d’unités de peintures possédé par le joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.get_surface">
+<code class="sig-name descname">get_surface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.get_surface" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne la surface recouverte du joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>joueur</strong> – le joueur</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier positif ou nul</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.get_temps_restant">
+<code class="sig-name descname">get_temps_restant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.get_temps_restant" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le temps restant pour l’objet que le joueur possède actuellement</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>joueur</strong> – le joueur</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier indiquant le temps restant pour l’objet que possède le joueur
+O si le joueur ne possède pas d’objet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.get_type_joueur">
+<code class="sig-name descname">get_type_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.get_type_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le type du joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>joueur</strong> – le joueur</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>résultat un caratère “H” pour humain et “O” pour ordinateur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.jouer_ia">
+<code class="sig-name descname">jouer_ia</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em>, <em class="sig-param"><span class="n">etat_jeu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.jouer_ia" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>appelle la fonction de l’ia associée au joueur et retourne son résultat</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joueur</strong> – le joueur</p></li>
+<li><p><strong>etat_jeu</strong> – un dictionnaire donnant l’état du jeu</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un ordre pour le joueur sous la forme d’une chaine de caractères</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.mise_a_jour_temps">
+<code class="sig-name descname">mise_a_jour_temps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.mise_a_jour_temps" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>enlève une unité de temps à la durée de vie de l’objet possédé par le joueur.
+Attention, si cette durée de vie passe à 0 il faut retirer l’objet du joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>joueur</strong> – le joueur à modifier</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie le joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.set_fonction_ia">
+<code class="sig-name descname">set_fonction_ia</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em>, <em class="sig-param"><span class="n">la_fonction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.set_fonction_ia" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>definit la fonction à appeler pour que ce joueur joue automatiquement</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joueur</strong> – le joueur</p></li>
+<li><p><strong>la_fonction</strong> – une fonction qui prend en paramètre un dictionnaire donnant l’état du jeu
+retourne l</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie le joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.set_surface">
+<code class="sig-name descname">set_surface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em>, <em class="sig-param"><span class="n">surface</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.set_surface" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>mis à jour la surface recouverte du joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joueur</strong> – le joueur</p></li>
+<li><p><strong>surface</strong> – un entier positif ou nul</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie le joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="joueur.set_type_joueur">
+<code class="sig-name descname">set_type_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joueur</span></em>, <em class="sig-param"><span class="n">type_joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#joueur.set_type_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>permet de « forcer » le type du joueur (humain ou ordinateur)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joueur</strong> – le joueur à modifier</p></li>
+<li><p><strong>type_joueur</strong> – un caractère “H” pour humain “O” pour ordinateur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie le joueur</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="labyrinthe.html" class="btn btn-neutral float-right" title="labyrinthe" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="carte.html" class="btn btn-neutral" title="carte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sébastien Limet.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'fr',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

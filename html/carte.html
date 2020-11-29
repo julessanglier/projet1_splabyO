@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>carte &mdash; Documentation Splaby&#39;O 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="joueur" href="joueur.html" />
+    <link rel="prev" title="dev" href="modules.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contenus:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dev</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">carte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joueur.html">joueur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labyrinthe.html">labyrinthe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrice.html">matrice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="participants.html">participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plateau.html">plateau</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Splaby'O</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">dev</a> &raquo;</li>
+        
+      <li>carte</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/carte.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="carte">
+<h1>carte<a class="headerlink" href="#carte" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Projet Python 2020-2021 de 1ere année et AS DUT Informatique Orléans</p>
+<dl class="py function">
+<dt id="carte.Carte">
+<code class="sig-name descname">Carte</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nord</span></em>, <em class="sig-param"><span class="n">est</span></em>, <em class="sig-param"><span class="n">sud</span></em>, <em class="sig-param"><span class="n">ouest</span></em>, <em class="sig-param"><span class="n">objet</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.Carte" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>permet de créer une carte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nord</strong> – un booléen indiquant s’il y a un mur ou non au nord</p></li>
+<li><p><strong>est</strong> – un booléen indiquant s’il y a un mur ou non à l’est</p></li>
+<li><p><strong>sud</strong> – un booléen indiquant s’il y a un mur ou non au sud</p></li>
+<li><p><strong>ouest</strong> – un booléen indiquant s’il y a un mur ou non à l’ouest</p></li>
+<li><p><strong>objet</strong> – un entier positif indiquant si la carte possède un objet (0 indique l’absence d’objet)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la structure que vous avez choisie pour représenter les cartes avec comme couleur « aucune »</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.coder_murs">
+<code class="sig-name descname">coder_murs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.coder_murs" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>code les murs sous la forme d’un entier dont le codage binaire
+est de la forme bNbEbSbO où bN, bE, bS et bO valent</p>
+<blockquote>
+<div><p>soit 0 s’il n’y a pas de mur dans dans la direction correspondante
+soit 1 s’il y a un mur dans la direction correspondante</p>
+</div></blockquote>
+<p>bN est le chiffre des unité, BE des dizaine, etc…
+le code obtenu permet d’obtenir l’indice du caractère semi-graphique
+correspondant à la carte dans la liste listeCartes au début de ce fichier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier indice du caractère semi-graphique de la carte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.decoder_murs">
+<code class="sig-name descname">decoder_murs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em>, <em class="sig-param"><span class="n">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.decoder_murs" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>positionne les murs d’une carte en fonction du code décrit précédemment</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte</strong> – une carte</p></li>
+<li><p><strong>code</strong> – un entier codant les murs d’une carte</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction modifie la carte mais ne retourne rien</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.est_valide">
+<code class="sig-name descname">est_valide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.est_valide" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne un booléen indiquant si la carte est valide ou non c’est à dire qu’elle a zero, un ou deux murs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un booléen indiquant si la carte est valide ou non</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.get_couleur">
+<code class="sig-name descname">get_couleur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.get_couleur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne la couleur d’une carte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>retourne la couleur de la carte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.get_liste_joueurs">
+<code class="sig-name descname">get_liste_joueurs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.get_liste_joueurs" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne la liste des joueurs se trouvant sur la carte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>une liste de joueurs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.get_objet">
+<code class="sig-name descname">get_objet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.get_objet" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne la valeur de l’objet qui se trouve sur la carte (0 si pas d’objet)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier positif</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.mur_est">
+<code class="sig-name descname">mur_est</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.mur_est" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne un booléen indiquant si la carte possède un mur à l’est</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>True si il y a un mur à l’est</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.mur_nord">
+<code class="sig-name descname">mur_nord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.mur_nord" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne un booléen indiquant si la carte possède un mur au nord</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>True si il y a un mur au nord</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.mur_ouest">
+<code class="sig-name descname">mur_ouest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.mur_ouest" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne un booléen indiquant si la carte possède un mur à l’ouest</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>True si il y a un mur à l’ouest</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.mur_sud">
+<code class="sig-name descname">mur_sud</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.mur_sud" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne un booléen indiquant si la carte possède un mur au sud</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>True si il y a un mur au sud</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.passage_est">
+<code class="sig-name descname">passage_est</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte1</span></em>, <em class="sig-param"><span class="n">carte2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.passage_est" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>suppose que la carte2 est placée à l’est de la carte1 et indique
+s’il y a un passage entre ces deux cartes en passant par l’est</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte1</strong> – une carte</p></li>
+<li><p><strong>carte2</strong> – une autre carte</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un booléen</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.passage_nord">
+<code class="sig-name descname">passage_nord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte1</span></em>, <em class="sig-param"><span class="n">carte2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.passage_nord" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>suppose que la carte2 est placée au nord de la carte1 et indique
+s’il y a un passage entre ces deux cartes en passant par le nord</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte1</strong> – une carte</p></li>
+<li><p><strong>carte2</strong> – une autre carte</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un booléen</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.passage_ouest">
+<code class="sig-name descname">passage_ouest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte1</span></em>, <em class="sig-param"><span class="n">carte2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.passage_ouest" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>suppose que la carte2 est placée à l’ouest de la carte1 et indique
+s’il y a un passage entre ces deux cartes en passant par l’ouest</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte1</strong> – une carte</p></li>
+<li><p><strong>carte2</strong> – une autre carte</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un booléen</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.passage_sud">
+<code class="sig-name descname">passage_sud</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte1</span></em>, <em class="sig-param"><span class="n">carte2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.passage_sud" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>suppose que la carte2 est placée au sud de la carte1 et indique
+s’il y a un passage entre ces deux cartes en passant par le sud</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte1</strong> – une carte</p></li>
+<li><p><strong>carte2</strong> – une autre carte</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un booléen</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.poser_joueur">
+<code class="sig-name descname">poser_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em>, <em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.poser_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>pose le joueur passé en paramètre sur la carte. Si le joueur y était déjà ne fait rien</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte</strong> – une carte</p></li>
+<li><p><strong>joueur</strong> – le joueur à poser</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction modifie la carte mais ne retourne rien</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.poser_objet">
+<code class="sig-name descname">poser_objet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em>, <em class="sig-param"><span class="n">objet</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.poser_objet" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>pose l’objet passé en paramètre sur la carte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte</strong> – une carte</p></li>
+<li><p><strong>objet</strong> – un entier positif (0 pour ne mettre aucun objet</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien mais modifie la carte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.possede_joueur">
+<code class="sig-name descname">possede_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em>, <em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.possede_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne un booléen indiquant si la carte possède le joueur passé en paramètre</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte</strong> – une carte</p></li>
+<li><p><strong>joueur</strong> – un joueur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>True si le joueur est sur la carte False sinon</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.prendre_joueur">
+<code class="sig-name descname">prendre_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em>, <em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.prendre_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>enlève le joueur passé en paramètre de la carte. Si le joueur n’y était pas ne fait rien</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte</strong> – une carte</p></li>
+<li><p><strong>joueur</strong> – un joueur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction modifie la carte mais ne retourne rien</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.prendre_objet">
+<code class="sig-name descname">prendre_objet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.prendre_objet" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>enlève le objet qui se trouve sur la carte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien mais modifie la carte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.set_couleur">
+<code class="sig-name descname">set_couleur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em>, <em class="sig-param"><span class="n">couleur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.set_couleur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>change le couleur d’une carte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte</strong> – une carte</p></li>
+<li><p><strong>couleur</strong> – une couleur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien mais modifie la carte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.set_liste_joueurs">
+<code class="sig-name descname">set_liste_joueurs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em>, <em class="sig-param"><span class="n">liste_joueurs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.set_liste_joueurs" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>place la liste des joueurs passées en paramètre sur la carte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte</strong> – une carte</p></li>
+<li><p><strong>liste_joueurs</strong> – la liste des joueurs à placer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien mais modifie la carte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.to_char">
+<code class="sig-name descname">to_char</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.to_char" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>fournit le caractère semi graphique correspondant à la carte (voir la variable listeCartes au début de ce script)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un caractère semi graphique</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.tourner_aleatoire">
+<code class="sig-name descname">tourner_aleatoire</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.tourner_aleatoire" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>fait tourner la carte d’un nombre de tours aléatoire</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction modifie la carte mais ne retourne rien</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.tourner_antihoraire">
+<code class="sig-name descname">tourner_antihoraire</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.tourner_antihoraire" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>fait tourner la carte dans le sens anti-horaire</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction modifie la carte mais ne retourne rien</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="carte.tourner_horaire">
+<code class="sig-name descname">tourner_horaire</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carte.tourner_horaire" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>fait tourner la carte dans le sens horaire</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>carte</strong> – une carte</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction modifie la carte mais ne retourne rien</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="joueur.html" class="btn btn-neutral float-right" title="joueur" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral" title="dev" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sébastien Limet.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'fr',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

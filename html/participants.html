@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>participants &mdash; Documentation Splaby&#39;O 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="plateau" href="plateau.html" />
+    <link rel="prev" title="matrice" href="matrice.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contenus:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dev</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="carte.html">carte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joueur.html">joueur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labyrinthe.html">labyrinthe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrice.html">matrice</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plateau.html">plateau</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Splaby'O</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">dev</a> &raquo;</li>
+        
+      <li>participants</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/participants.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="participants">
+<h1>participants<a class="headerlink" href="#participants" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Projet Python 2020-2021 de 1ere année et AS DUT Informatique Orléans</p>
+<dl class="py function">
+<dt id="participants.Participants">
+<code class="sig-name descname">Participants</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noms_joueurs</span></em>, <em class="sig-param"><span class="n">liste_couleurs</span></em>, <em class="sig-param"><span class="n">humain</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.Participants" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>crée une liste de participants dont les noms sont dans la liste de noms passés en paramètre.
+Les joueurs sont numéroté de 1 à N dans l’ordre de leur création
+Par défaut tous les joueurs sont des ordinateurs sauf le joueur 1 en fonction du paramètre humain
+Attention! il ne s’agit pas d’une simple liste de joueurs mais il faudra des informations permettant
+de gérer la notion de joueur courant, de tour de jeu (une fois que tous les joueurs ont joué)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>noms_joueurs</strong> – une liste de chaines de caractères</p></li>
+<li><p><strong>liste_couleurs</strong> – la liste des couleurs choisis pour chaque joueur</p></li>
+<li><p><strong>humain</strong> – un booléen indiquant si le joueur 1 est humain ou non</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la structure que vous avez choisie pour représenter les participants</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.ajouter_joueur">
+<code class="sig-name descname">ajouter_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em>, <em class="sig-param"><span class="n">joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.ajouter_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>ajoute un nouveau joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>participants</strong> – les participants actuels</p></li>
+<li><p><strong>joueur</strong> – le joueur à ajouter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien mais modifie la liste des participants</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.changer_joueur_courant">
+<code class="sig-name descname">changer_joueur_courant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.changer_joueur_courant" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>passe au joueur suivant (change le joueur courant donc)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>participants</strong> – les participants</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction modifie la liste des participants et
+retourne un booléen indiquant si on est revenu au joueur qui a commencé la partie</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.classement_joueurs">
+<code class="sig-name descname">classement_joueurs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.classement_joueurs" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne une liste de participants triée suivant les critètres 1 la surface couverte 2 la reserve d’encre</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>participants</strong> – les participants</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>une liste de joueurs triée dans l’ordre décroissant</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.get_joueur_courant">
+<code class="sig-name descname">get_joueur_courant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.get_joueur_courant" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le joueur courant</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>participants</strong> – les participants</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien mais modifie la liste des participants</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.get_joueur_par_nom">
+<code class="sig-name descname">get_joueur_par_nom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em>, <em class="sig-param"><span class="n">nom_joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.get_joueur_par_nom" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le joueur de numéro num_joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>participants</strong> – les participants</p></li>
+<li><p><strong>nom_joueur</strong> – le nom du joueur souhaité</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>le joueur qui porte le nom indiqué, None si aucun joueur ne porte ce nom</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.get_joueur_par_num">
+<code class="sig-name descname">get_joueur_par_num</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em>, <em class="sig-param"><span class="n">num_joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.get_joueur_par_num" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le joueur de numéro num_joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>participants</strong> – les participants</p></li>
+<li><p><strong>num_joueur</strong> – le numéro du joueur souhaité</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>le joueur qui porte le numéro indiqué</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.get_nb_joueurs">
+<code class="sig-name descname">get_nb_joueurs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.get_nb_joueurs" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le nombre de joueurs participant à la partie</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>participants</strong> – les participants</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>le nombre de joueurs de la partie</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.get_num_joueur_courant">
+<code class="sig-name descname">get_num_joueur_courant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.get_num_joueur_courant" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le numéro du joueur courant</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>participants</strong> – les participants</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un nombre entre 1 et 4 indiquant le numéro du joueur courant</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.get_num_premier_joueur">
+<code class="sig-name descname">get_num_premier_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.get_num_premier_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>return le numéro du joueur qui a joué en premier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>participants</strong> – les participants</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un nombre entre 1 et 4 indiquant le numéro du joueur qui a joué en premier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.init_aleatoire_premier_joueur">
+<code class="sig-name descname">init_aleatoire_premier_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.init_aleatoire_premier_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>tire au sort le premier joueur courant</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>participants</strong> – les participants</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie la liste des participants</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.init_premier_joueur">
+<code class="sig-name descname">init_premier_joueur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em>, <em class="sig-param"><span class="n">num_joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.init_premier_joueur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>initialialise le premier joueur courant au joueur qui porte le numéro num_joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>participants</strong> – les participants</p></li>
+<li><p><strong>num_joueur</strong> – un nombre entre 1 et 4</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>rien cette fonction modifie la liste des participants</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.mise_a_jour_surface">
+<code class="sig-name descname">mise_a_jour_surface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em>, <em class="sig-param"><span class="n">couverture</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.mise_a_jour_surface" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>permet de mettre à jour la surface couverte par chaque joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>participants</strong> – les participants</p></li>
+<li><p><strong>couverture</strong> – un dictionnaire qui indique pour chaque couleur le nombre de cases de cette couleur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien mais modifie la liste des participants</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="participants.set_joueur_courant">
+<code class="sig-name descname">set_joueur_courant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em>, <em class="sig-param"><span class="n">num_joueur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#participants.set_joueur_courant" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>force le joueur courant au joueur qui porte le numéro num_joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>participants</strong> – les participants</p></li>
+<li><p><strong>num_joueur</strong> – un nombre entre 1 et 4</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>rien cette fonction modifie la liste des participants</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plateau.html" class="btn btn-neutral float-right" title="plateau" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="matrice.html" class="btn btn-neutral" title="matrice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sébastien Limet.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'fr',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

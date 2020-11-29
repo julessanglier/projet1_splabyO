@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>matrice &mdash; Documentation Splaby&#39;O 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="participants" href="participants.html" />
+    <link rel="prev" title="labyrinthe" href="labyrinthe.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contenus:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dev</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="carte.html">carte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joueur.html">joueur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labyrinthe.html">labyrinthe</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">matrice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="participants.html">participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plateau.html">plateau</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Splaby'O</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">dev</a> &raquo;</li>
+        
+      <li>matrice</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/matrice.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="matrice">
+<h1>matrice<a class="headerlink" href="#matrice" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Projet Python 2020-2021 de 1ere année et AS DUT Informatique Orléans</p>
+<dl class="py function">
+<dt id="matrice.Matrice">
+<code class="sig-name descname">Matrice</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nb_lignes</span></em>, <em class="sig-param"><span class="n">nb_colonnes</span></em>, <em class="sig-param"><span class="n">valeur_par_defaut</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.Matrice" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>crée une matrice de nb_lignes lignes sur nb_colonnes colonnes en mettant valeur_par_defaut
+dans chacune des cases</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nb_lignes</strong> – un entier strictement positif qui indique le nombre de lignes</p></li>
+<li><p><strong>nb_colonnes</strong> – un entier strictement positif qui indique le nombre de colonnes</p></li>
+<li><p><strong>valeur_par_defaut</strong> – la valeur par défaut</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la matrice ayant les bonnes propriétés</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="matrice.decalage_colonne_en_bas">
+<code class="sig-name descname">decalage_colonne_en_bas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrice</span></em>, <em class="sig-param"><span class="n">num_colonne</span></em>, <em class="sig-param"><span class="n">nouvelle_valeur</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.decalage_colonne_en_bas" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>decale la colonne num_colonne d’une case vers le bas en insérant une nouvelle
+valeur pour remplacer la premiere case en haut de cette ligne</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrice</strong> – la matrice considérée</p></li>
+<li><p><strong>num_colonne</strong> – le numéro de la ligne à décaler</p></li>
+<li><p><strong>nouvelle_valeur</strong> – la valeur à placer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la valeur qui a été ejectée lors du décalage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="matrice.decalage_colonne_en_haut">
+<code class="sig-name descname">decalage_colonne_en_haut</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrice</span></em>, <em class="sig-param"><span class="n">num_colonne</span></em>, <em class="sig-param"><span class="n">nouvelle_valeur</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.decalage_colonne_en_haut" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>decale la colonne num_colonne d’une case vers le haut en insérant une nouvelle
+valeur pour remplacer la premiere case en bas de cette ligne</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrice</strong> – la matrice considérée</p></li>
+<li><p><strong>num_colonne</strong> – le numéro de la ligne à décaler</p></li>
+<li><p><strong>nouvelle_valeur</strong> – la valeur à placer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la valeur qui a été ejectée lors du décalage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="matrice.decalage_ligne_a_droite">
+<code class="sig-name descname">decalage_ligne_a_droite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrice</span></em>, <em class="sig-param"><span class="n">num_ligne</span></em>, <em class="sig-param"><span class="n">nouvelle_valeur</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.decalage_ligne_a_droite" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>decale la ligne num_ligne d’une case vers la droite en insérant une nouvelle
+valeur pour remplacer la premiere case à gauche de cette ligne</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrice</strong> – la matrice considérée</p></li>
+<li><p><strong>num_ligne</strong> – le numéro de la ligne à décaler</p></li>
+<li><p><strong>nouvelle_valeur</strong> – la valeur à placer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la valeur qui a été ejectée lors du décalage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="matrice.decalage_ligne_a_gauche">
+<code class="sig-name descname">decalage_ligne_a_gauche</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrice</span></em>, <em class="sig-param"><span class="n">num_ligne</span></em>, <em class="sig-param"><span class="n">nouvelle_valeur</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.decalage_ligne_a_gauche" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>permet de décaler une ligne vers la gauche en insérant une nouvelle
+valeur pour remplacer la premiere case à droite de cette ligne
+le fonction retourne la valeur qui a été éjectée</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrice</strong> – la matrice considérée</p></li>
+<li><p><strong>num_ligne</strong> – le numéro de la ligne à décaler</p></li>
+<li><p><strong>nouvelle_valeur</strong> – la valeur à placer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la valeur qui a été ejectée lors du décalage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="matrice.get_nb_colonnes">
+<code class="sig-name descname">get_nb_colonnes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrice</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.get_nb_colonnes" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le nombre de colonnes de la matrice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>matrice</strong> – la matrice considérée</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier donnant le nombre de colonnes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="matrice.get_nb_lignes">
+<code class="sig-name descname">get_nb_lignes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrice</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.get_nb_lignes" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le nombre de lignes de la matrice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>matrice</strong> – la matrice considérée</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier donnant le nombre de lignes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="matrice.get_valeur">
+<code class="sig-name descname">get_valeur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrice</span></em>, <em class="sig-param"><span class="n">ligne</span></em>, <em class="sig-param"><span class="n">colonne</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.get_valeur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne la valeur qui se trouve en (ligne,colonne) dans la matrice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrice</strong> – la matrice considérée</p></li>
+<li><p><strong>ligne</strong> – le numéro de la ligne (en commençant par 0)</p></li>
+<li><p><strong>colonne</strong> – le numéro de la colonne (en commençant par 0)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la valeur se trouvant (ligne,colonne) dans la matrice</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="matrice.set_valeur">
+<code class="sig-name descname">set_valeur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrice</span></em>, <em class="sig-param"><span class="n">ligne</span></em>, <em class="sig-param"><span class="n">colonne</span></em>, <em class="sig-param"><span class="n">valeur</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrice.set_valeur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>met la valeur dans la case se trouve en (ligne,colonne) de la matrice
+:param matrice: la matrice considérée
+:param ligne: le numéro de la ligne (en commençant par 0)
+:param colonne: le numéro de la colonne (en commençant par 0)
+:param valeur: la valeur à stocker dans la matrice
+:return: cette fonction ne retourne rien mais modifie la matrice</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="participants.html" class="btn btn-neutral float-right" title="participants" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="labyrinthe.html" class="btn btn-neutral" title="labyrinthe" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sébastien Limet.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'fr',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

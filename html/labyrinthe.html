@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>labyrinthe &mdash; Documentation Splaby&#39;O 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="matrice" href="matrice.html" />
+    <link rel="prev" title="joueur" href="joueur.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contenus:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dev</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="carte.html">carte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joueur.html">joueur</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">labyrinthe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrice.html">matrice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="participants.html">participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plateau.html">plateau</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Splaby'O</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">dev</a> &raquo;</li>
+        
+      <li>labyrinthe</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/labyrinthe.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="labyrinthe">
+<h1>labyrinthe<a class="headerlink" href="#labyrinthe" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Projet Python 2020-2021 de 1ere année et AS DUT Informatique Orléans</p>
+<dl class="py function">
+<dt id="labyrinthe.Labyrinthe">
+<code class="sig-name descname">Labyrinthe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noms_joueurs</span></em>, <em class="sig-param"><span class="n">couleurs_joueurs</span></em>, <em class="sig-param"><span class="n">humain</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">nb_tours</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">duree_objet</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.Labyrinthe" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>permet de créer un labyrinthe avec nbJoueurs joueurs, nb_tresors trésors
+chacun des joueurs aura au plus nb_tresors_max à trouver
+si ce dernier paramètre est à 0, on distribuera le maximum de trésors possible
+à chaque joueur en restant équitable
+un joueur courant est choisi et la phase est initialisée</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>noms_joueurs</strong> – la liste des noms des joueurs participant à la partie</p></li>
+<li><p><strong>couleurs_joueurs</strong> – la liste des couleurs choisies par chacun des joueurs</p></li>
+<li><p><strong>humain</strong> – un caractère valant “H” ou “O” qui indique si le joueur 1 est humain ou ordinateur</p></li>
+<li><p><strong>nb_tours</strong> – un entier indiquant le nombre de tours de la partie</p></li>
+<li><p><strong>duree_objet</strong> – un entier indiquant la durée de validité d’un objet pris par un joueur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>le labyrinthe crée</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.coup_interdit">
+<code class="sig-name descname">coup_interdit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em>, <em class="sig-param"><span class="n">direction</span></em>, <em class="sig-param"><span class="n">rangee</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.coup_interdit" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne True si le coup proposé correspond au coup interdit elle retourne False sinon</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labyrinthe</strong> – le labyrinthe considéré</p></li>
+<li><p><strong>direction</strong> – un caractère “N”, “E”, “S” ou “O” indiquant la direction choisie</p></li>
+<li><p><strong>rangee</strong> – un entier indiquant la colonne ou la ligne choisie</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un booléen indiquant si le coup est interdit ou non</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.deplacer">
+<code class="sig-name descname">deplacer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em>, <em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.deplacer" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Déplace le joueur courant dans la direction souhaitée si c’est possible. Cette fonction va notamment:
+* verifier que le déplacement est possible
+* déplacer le joueur
+* donner au joueur courant l’objet qu’il y a sur la carte d’arrivée (si elle possède un objet) en augmentant</p>
+<blockquote>
+<div><p>la réserve de peinture du jouieur de POINTS[« objet »]</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>mettre à jour la réserve de peinture du joueur en fonction de la couleur de la case d’arrivée
+(POINTS[« couleur_joueur »], POINTS[« couleur_neutre »] ou POINTS[« couleur_adversaire »]</p></li>
+</ul>
+<p>Si le joueur donne un ordre erroné ou un déplacement impossible il perd POINTS[« ordre_errone »] unité de peinture</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labyrinthe</strong> – le labyrinthe considéré</p></li>
+<li><p><strong>direction</strong> – un caractère qui indique la direction choisie (“N”,”S”,”E”,”O”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un chaine de caractères indiquant ce qui s’est passé
+* La direction est inconnue
+* Le déplacement est impossible
+* Le joueur s’est déplacé vers …
+* Le joueur s’est déplacé vers … et un trouvé un objet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.finir_tour">
+<code class="sig-name descname">finir_tour</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.finir_tour" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><blockquote>
+<div><p>met a jour les différentes informations sur les joueurs
+* le temps restant de l’objet du joueur courant
+* la surface couverte par chaque joueur
+change le joueur courant (et met à jour le compteur de tour si nécessaire</p>
+</div></blockquote>
+<p>vérifie si la partie est terminée, si ce n’est pas le cas passe au joueur suivant</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – labyrinthe considéré</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>Cette fonction retourne rien mais elle modifie le labyrinthe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.get_carte_a_jouer">
+<code class="sig-name descname">get_carte_a_jouer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.get_carte_a_jouer" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>donne la carte à jouer celle qui est hors du plateau</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – le labyrinthe considéré</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la carte à jouer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.get_coordonnees_joueur_courant">
+<code class="sig-name descname">get_coordonnees_joueur_courant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.get_coordonnees_joueur_courant" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>donne les coordonnées du joueur courant sur le plateau</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – le labyrinthe considéré</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>les coordonnées du joueur courant ou None si celui-ci n’est pas sur le plateau</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.get_direction_interdite">
+<code class="sig-name descname">get_direction_interdite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.get_direction_interdite" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le numéro de la direction interdite</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – le labyrinthe considéré</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier indiquant la direction interdite</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.get_duree_objet">
+<code class="sig-name descname">get_duree_objet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.get_duree_objet" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>permet de connaitre la durée de validité des objets quand ils sont pris par un joueur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – le labyrinthe considéré</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier indiquant la durée de validité des objets</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.get_nb_tours_restants">
+<code class="sig-name descname">get_nb_tours_restants</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.get_nb_tours_restants" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>donne le nombre de tours restants dans la partie</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – un labyrinthe</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier donnant le nombre de tours restants</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.get_participants">
+<code class="sig-name descname">get_participants</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.get_participants" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne la liste des participants (structure créée dans participants.py</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – le labyrinthe considéré</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>les joueurs sous la forme de la structure implémentée dans participants.py</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.get_plateau">
+<code class="sig-name descname">get_plateau</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.get_plateau" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne la matrice représentant le plateau de jeu</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – labyrinthe le labyrinthe considéré</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la matrice représentant le plateau de ce labyrinthe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.get_rangee_interdite">
+<code class="sig-name descname">get_rangee_interdite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.get_rangee_interdite" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>retourne le numéro de la rangée interdite</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>labyrinthe</strong> – le labyrinthe considéré</p>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un entier indiquant la rangée interdite</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.initialiser_labyrinthe">
+<code class="sig-name descname">initialiser_labyrinthe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">participants</span></em>, <em class="sig-param"><span class="n">plateau</span></em>, <em class="sig-param"><span class="n">carte_supplementaire</span></em>, <em class="sig-param"><span class="n">nb_tours</span></em>, <em class="sig-param"><span class="n">rangee_interdite</span></em>, <em class="sig-param"><span class="n">direction_interdite</span></em>, <em class="sig-param"><span class="n">duree_objet</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.initialiser_labyrinthe" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Cette fonction permet d’initialiser un labyrinthe avec des valeurs bien précises (permettant de charger une partie
+en cours)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>participants</strong> – les participants à la partie</p></li>
+<li><p><strong>plateau</strong> – le plateau dans son état actuel</p></li>
+<li><p><strong>carte_supplementaire</strong> – la carte amovible qui est à l’extérieur du plateau</p></li>
+<li><p><strong>nb_tours</strong> – le nombre de tours restants</p></li>
+<li><p><strong>rangee_interdite</strong> – la rangée interdite pour la carte amovible</p></li>
+<li><p><strong>direction_interdite</strong> – la colonne interdite pour la carte amovible</p></li>
+<li><p><strong>duree_objet</strong> – la durée de vie des objets possédés par un joueur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>retourne le labyrinthe avec les caractéristiques passées en paramètre</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.interpreter_ordre">
+<code class="sig-name descname">interpreter_ordre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em>, <em class="sig-param"><span class="n">ordre</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.interpreter_ordre" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Cette fonction executes les ordres fournie sous la forme d’une chaine de caractères commençant par l’ordre de
+peinture puis l’ordre de déplacement ou l’ordre de modification du labyrinthe. Tous les ordres commencent par un P
+suivi d’une des lettre X N O S ou E indiquant la direction où peindre (X indiquant que le joueur ne souhaite pas
+peindre) . La seconde partie de l’ordre est</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>soit un D (pour déplacement) suivi d’une des lettres N O S ou E</p></li>
+<li><p>soit un T (pour tourner) suivi d’une suite de H ou de A suivi une des lettres N O S ou E suivi d’un chiffre</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Par exemple:</dt><dd><ul class="simple">
+<li><p>« PODE » indique que le joueur peint vers l’ouest et se déplace vers l’est</p></li>
+<li><dl class="simple">
+<dt>« PXTAAN3 » indique que le joueur ne souhaite pas peindre et qu’il tourne la carte amovible deux fois dans le</dt><dd><p>sens antihoraire puis insère la carte amovible au nord dans la colonne 3</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labyrinthe</strong> – le labyrinthe considéré</p></li>
+<li><p><strong>ordre</strong> – un chaine de caractère comme indiquée ci-dessus</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>une chaine de caractères indiquant ce qui s’est passé</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.jouer_carte">
+<code class="sig-name descname">jouer_carte</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em>, <em class="sig-param"><span class="n">direction</span></em>, <em class="sig-param"><span class="n">rangee</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.jouer_carte" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>fonction qui joue la carte amovible dans la direction et sur la rangée passées
+en paramètres. Cette fonction</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>met à jour le plateau du labyrinthe</p></li>
+<li><p>met à jour la carte à jouer</p></li>
+<li><p>met à jour la nouvelle direction interdite</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labyrinthe</strong> – le labyrinthe</p></li>
+<li><p><strong>direction</strong> – un caractère qui indique la direction choisie (“N”,”S”,”E”,”O”)</p></li>
+<li><p><strong>rangee</strong> – le numéro de la ligne ou de la colonne choisie</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>None si tout s’est bien passé ou une chaine de caractères indiquants le problème survenu.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Voici les messages possibles</dt><dd><ul class="simple">
+<li><p>Carte insérée!</p></li>
+<li><p>Rangée invalide</p></li>
+<li><p>Direction invalide</p></li>
+<li><p>Coup interdit</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.lave_et_transfert_joueurs">
+<code class="sig-name descname">lave_et_transfert_joueurs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">carte_a_jouer</span></em>, <em class="sig-param"><span class="n">carte_inseree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.lave_et_transfert_joueurs" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Permet de laver la carte à jouer (enlever la couleur) et de transférer la liste des joueurs
+qui se trouvent sur la carte_a_jouer vers la carte_inseree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carte_a_jouer</strong> – la carte qui vient d’être expulsée du plateau</p></li>
+<li><p><strong>carte_inseree</strong> – la carte qui vient d’être remuise sur le plateau</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>cette fonction ne retourne rien</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.peindre">
+<code class="sig-name descname">peindre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em>, <em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.peindre" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Permet de peindre de la couleur du joueur courant toutes les cases atteignables dans la direction choisie.
+Si direction vaut “X” la fonction ne fait rien (le joueur courant ne veut pas peindre)
+Cette fonction va donc</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>peindre toutes les cartes atteignables à partir de la position du joueur courant dans la direction choisie</p></li>
+<li><p>enlever au joueur courant le nombre d’unités de peinture correspond au nombre de cases peintes</p></li>
+<li><p>enlever aux joueurs ne possedant pas de bouclier et touchés par le jet de peinture le nombre d’unités
+prévu par POINTS[« peindre_adversaire »]</p></li>
+<li><p>ajouter au joueur courant le nombre d’unités de peinture enlevés aux adversaires</p></li>
+</ul>
+</div></blockquote>
+<p>De plus si le joueur courant possède un pistolet son jet de peinture doit traverser un mur et si il possède une
+bombe le jet de peinture doit aller dans toutes les directions en commençant par direction et en allant dans le
+sens des aiguilles d’une montre</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labyrinthe</strong> – le labyrinthe considéré</p></li>
+<li><p><strong>direction</strong> – un caractère qui indique la direction choisie (“X”, “N”,”S”,”E”,”O”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un chaine de caractères indiquant ce qui s’est passé
+* Le joueur ne veut pas peindre
+* Le joueur a peint dans la direction …
+* Direction inconnue</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.poser_joueur_courant">
+<code class="sig-name descname">poser_joueur_courant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em>, <em class="sig-param"><span class="n">lin</span></em>, <em class="sig-param"><span class="n">col</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.poser_joueur_courant" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>pose le joueur courant sur la case lin,col du plateau</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labyrinthe</strong> – le labyrinthe considéré</p></li>
+<li><p><strong>lig</strong> – la ligne où se trouve la carte</p></li>
+<li><p><strong>col</strong> – la colonne où se trouve la carte</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie le labyrinthe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.prendre_joueur_courant">
+<code class="sig-name descname">prendre_joueur_courant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em>, <em class="sig-param"><span class="n">lig</span></em>, <em class="sig-param"><span class="n">col</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.prendre_joueur_courant" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>enlève le joueur courant de la carte qui se trouve sur la case lin,col du plateau
+si le joueur ne s’y trouve pas la fonction ne fait rien</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labyrinthe</strong> – le labyrinthe considéré</p></li>
+<li><p><strong>lig</strong> – la ligne où se trouve la carte</p></li>
+<li><p><strong>col</strong> – la colonne où se trouve la carte</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>la fonction ne retourne rien mais modifie le labyrinthe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="labyrinthe.tourner_carte">
+<code class="sig-name descname">tourner_carte</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labyrinthe</span></em>, <em class="sig-param"><span class="n">sens</span><span class="o">=</span><span class="default_value">'H'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#labyrinthe.tourner_carte" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Tourne la carte à jouer dans le sens indiqué en paramètre (H horaire A antihoraire)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labyrinthe</strong> – le labyrinthe considéré</p></li>
+<li><p><strong>sens</strong> – un caractère indiquant le sens dans lequel tourner la carte (“A” ou “H”)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Retourne</dt>
+<dd class="field-even"><p>un chaine de caractères indiquant ce qui s’est passé
+* Carte tournée!
+* Ordre pour tourner la carte inconnu</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="matrice.html" class="btn btn-neutral float-right" title="matrice" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="joueur.html" class="btn btn-neutral" title="joueur" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sébastien Limet.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'fr',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
