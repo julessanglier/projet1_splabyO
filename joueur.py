@@ -46,7 +46,7 @@ def Joueur(nom, couleur, reserve_initiale=20, surface=0, type_joueur='O', objet=
     :param ia:  une fonction indiquant quelle fonction appeler pour lancer l'IA associée à un joueur de type Ordinateur
     :return: le joueur possédant les caractéristiques passées en paramètre.
     """
-    return {'nom': nom, 'couleur': couleur, 'reserve': reserve_initiale, 'surface': surface, 'type': type_joueur, 'objet': objet, 'temps_restant': temps_restant, 'ia': ia}
+    return {'nom': nom, 'couleur': couleur, 'reserve': reserve_initiale, 'surface': surface, 'type': type_joueur, 'objet': objet, 'temps_restant': temps_restant, 'ia': ia, 'a_joue':False, 'joueur_courant':False, 'premier_joueur': False}
 
 def ajouter_objet(joueur, objet, temps=15):
     """
@@ -68,9 +68,11 @@ def mise_a_jour_temps(joueur):
     :param joueur: le joueur à modifier
     :return: la fonction ne retourne rien mais modifie le joueur
     """
-    joueur['temps_restant'] -= 1
-    if joueur['temps_restant'] == 0:
+    if joueur['temps_restant'] - 1 <= 0 or joueur['temps_restant'] <= 0:
+        joueur['temps_restant'] = 0
         joueur['objet'] = 0
+    else:
+        joueur['temps_restant'] -= 1
 
 
 
