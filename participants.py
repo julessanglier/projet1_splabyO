@@ -21,14 +21,14 @@ def Participants(noms_joueurs, liste_couleurs, humain=True):
     :return: la structure que vous avez choisie pour représenter les participants
     """
     tour = 0
-    participants = [tour]
+    participants = {"tour":tour, "joueurs":[]}
     nombre_joueurs = len(noms_joueurs)
     for indice_joueur in range(nombre_joueurs):
         nom_joueur = noms_joueurs[indice_joueur]
         couleur_joueur = liste_couleurs[indice_joueur]
         joueur = Joueur(nom_joueur, couleur_joueur, type_joueur=('H' if (indice_joueur == 0 and humain) else 'O'))
 
-        participants.append(joueur)
+        participants["joueurs"].append(joueur)
 
     return participants
 
@@ -40,7 +40,7 @@ def ajouter_joueur(participants, joueur):
     :param joueur: le joueur à ajouter
     :return: cette fonction ne retourne rien mais modifie la liste des participants
     """
-    participants.append(joueur)
+    participants["joueurs"].append(joueur)
     
 def init_aleatoire_premier_joueur(participants):
     """
@@ -51,8 +51,8 @@ def init_aleatoire_premier_joueur(participants):
     """
     effectif = get_nb_joueurs(participants)
     indice_alea = randint(1, effectif)
-    participants[indice_alea]['joueur_courant'] = True
-    participants[indice_alea]["premier_joueur"] = True
+    participants['joueur_courant'] = indice_alea
+    participants["premier_joueur"] = indice_alea
 
 
 def get_num_joueur_courant(participants):
@@ -62,16 +62,7 @@ def get_num_joueur_courant(participants):
     :param participants: les participants
     :return: un nombre entre 1 et 4 indiquant le numéro du joueur courant
     """
-    num_joueur_courant = 1
-    taille_participants = get_nb_joueurs(participants)
-    print(participants)
-    if taille_participants > 1:
-        for indice_joueur in range(1, taille_participants):
-            joueur = participants[indice_joueur]
-            if joueur['joueur_courant']:
-                return indice_joueur #indice -> numéro
-
-    return num_joueur_courant
+    return participants['joueur_courant']
 
 
 
@@ -82,16 +73,7 @@ def get_num_premier_joueur(participants):
     :param participants: les participants
     :return: un nombre entre 1 et 4 indiquant le numéro du joueur qui a joué en premier
     """
-    indice_joueur_courant = 1
-    if get_nb_joueurs(participants) > 1:
-        taille_participants = get_nb_joueurs(participants)
-        for i in range(1, taille_participants):
-            joueur = participants[i]
-            if joueur['premier_joueur']:
-                return i
-
-
-    return indice_joueur_courant
+    return participants['premier_joueur']
 
 
 def init_premier_joueur(participants, num_joueur):
@@ -102,9 +84,7 @@ def init_premier_joueur(participants, num_joueur):
     :param num_joueur: un nombre entre 1 et 4
     :return: rien cette fonction modifie la liste des participants
     """
-    if len(participants) > 1 and num_joueur > 0:
-        #participants[num_joueur]['joueur_courant'] = True
-        participants[num_joueur]['premier_joueur'] = True
+    participants['premier_joueur'] = num_joueur
 
 
 def set_joueur_courant(participants, num_joueur):
@@ -118,9 +98,7 @@ def set_joueur_courant(participants, num_joueur):
     #print("num_joueur=", num_joueur)
     #print("len(participants)=", len(participants))
     #print_participants(participants)
-    if len(participants) > 1 and num_joueur > 0:
-        participants[num_joueur]['joueur_courant'] = True
-        get_joueur_courant(participants)['joueur_courant'] = False
+    participants['joueur_courant'] = num_joueur
 
 
 def changer_joueur_courant(participants):
@@ -139,20 +117,19 @@ def changer_joueur_courant(participants):
     else:
         num_nv_joueur = num_joueur_courant+1
 
-    if participants[num_nv_joueur]['premier_joueur']:
+    if num_joueur_courant == participants['premier_joueur']:
         incr_tour(participants)
 
 
-    participants[num_joueur_courant]['joueur_courant'] = False
-    participants[num_nv_joueur]['joueur_courant'] = True
-    return participants[num_nv_joueur]['premier_joueur']
+    participants['joueur_courant'] = num_nv_joueur
+    return num_nv_joueur == participants['premier_joueur']
 
 
 def get_tour(participants):
-    return participants[0]
+    return participants['tour']
 
 def incr_tour(participants):
-    participants[0] += 1
+    participants['tour'] += 1
 
 
 def get_nb_joueurs(participants):
@@ -162,7 +139,7 @@ def get_nb_joueurs(participants):
     :param participants: les participants
     :return: le nombre de joueurs de la partie
     """
-    return len(participants)-1
+    return len(participants['joueurs'])
 
 
 def get_joueur_par_num(participants, num_joueur):
@@ -173,7 +150,7 @@ def get_joueur_par_num(participants, num_joueur):
     :param num_joueur: le numéro du joueur souhaité
     :return: le joueur qui porte le numéro indiqué
     """
-    return participants[num_joueur]
+    return participants['joueurs'][num_joueur-1]
 
 
 def get_joueur_par_nom(participants, nom_joueur):
@@ -184,8 +161,7 @@ def get_joueur_par_nom(participants, nom_joueur):
     :param nom_joueur: le nom du joueur souhaité
     :return: le joueur qui porte le nom indiqué, None si aucun joueur ne porte ce nom
     """
-    for num_joueur in range(1, len(participants)):
-        joueur = get_joueur_par_num(participants, num_joueur)
+    for joueur in participants['joueurs']:
         if joueur['nom'] == nom_joueur:
             return joueur
 
@@ -210,8 +186,7 @@ def mise_a_jour_surface(participants, couverture):
     :param couverture: un dictionnaire qui indique pour chaque couleur le nombre de cases de cette couleur
     :return: cette fonction ne retourne rien mais modifie la liste des participants
     """
-    for num_joueur in range(1, len(participants)):
-        joueur = get_joueur_par_num(participants, num_joueur)
+    for joueur in participants['joueurs']:
         couleur_joueur = joueur['couleur']
         nbr_cases_couleur = couverture[couleur_joueur]
         joueur['surface'] = nbr_cases_couleur
@@ -233,7 +208,7 @@ def classement_joueurs(participants):
             meilleur_joueur = participants_purgeable[1]
             num_meilleur_joueur = 1
             #utilisation de la fonction de comparaison de joueur.py
-            for num_joueur in range(1, len(participants)-len(classement)):
+            for num_joueur in range(1, get_nb_joueurs(participants)-len(classement)):
                 if comparer(meilleur_joueur, participants_purgeable[num_joueur]) == -1 or comparer(meilleur_joueur, participants_purgeable[num_joueur]) == 0:
                     meilleur_joueur = participants_purgeable[num_joueur]
                     num_meilleur_joueur = num_joueur
