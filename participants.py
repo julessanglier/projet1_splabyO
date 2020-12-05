@@ -95,9 +95,6 @@ def set_joueur_courant(participants, num_joueur):
     :param num_joueur: un nombre entre 1 et 4
     :return: rien cette fonction modifie la liste des participants
     """
-    #print("num_joueur=", num_joueur)
-    #print("len(participants)=", len(participants))
-    #print_participants(participants)
     participants['joueur_courant'] = num_joueur
 
 
@@ -201,15 +198,17 @@ def classement_joueurs(participants):
     """
 
     classement = None
-    participants_purgeable = participants.copy()
+    participants_purgeable = participants.copy() #un tri bulle pourrait fonctionner et serait sûrement plus adapté, mais au vu du nombre maximum de joueurs, cela reste raisonnable d'un pdv de la complexité
     if len(participants) > 2:
         classement = []
         while len(participants_purgeable) > 2:
             meilleur_joueur = participants_purgeable[1]
             num_meilleur_joueur = 1
-            #utilisation de la fonction de comparaison de joueur.py
-            for num_joueur in range(1, get_nb_joueurs(participants)-len(classement)):
-                if comparer(meilleur_joueur, participants_purgeable[num_joueur]) == -1 or comparer(meilleur_joueur, participants_purgeable[num_joueur]) == 0:
+            # utilisation de la fonction de comparaison de joueur.py
+            for num_joueur in range(1, get_nb_joueurs(participants) - len(classement)):
+                if comparer(meilleur_joueur, participants_purgeable[num_joueur]) == -1 or comparer(meilleur_joueur,
+                                                                                                   participants_purgeable[
+                                                                                                       num_joueur]) == 0:
                     meilleur_joueur = participants_purgeable[num_joueur]
                     num_meilleur_joueur = num_joueur
 
@@ -219,4 +218,3 @@ def classement_joueurs(participants):
         return classement.reverse()
 
     return classement
-    #perte de l'indice lors d'un tri, utilisation d'un dic recommandé

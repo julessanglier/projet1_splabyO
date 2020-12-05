@@ -3,7 +3,7 @@ import unittest
 import participants
 
 
-class TestCaseJoueur(unittest.TestCase):
+class TestCaseParticipants(unittest.TestCase):
     def setUp(self):
         self.noms = [[], ["Marie", "Samir", "Paul", "Sonia"], ["Samir", "Paul", "Marie"], ["Sonia", "Marie"]]
         self.les_couleurs = [[], ["info", "gmp", "chimie", "gte"], ["chimie", "gea", "info"], ["qlio", "gmp"]]
@@ -64,28 +64,30 @@ class TestCaseJoueur(unittest.TestCase):
         for i in range(len(self.noms)):
             p = participants.Participants(self.noms[i], self.les_couleurs[i], self.humains[i])
             partis.append(p)
-        for i in range(len(partis)):
-            participants.set_joueur_courant(partis[i], i + 1)
-            num_courant = participants.get_num_joueur_courant(partis[i])
-            self.assertEqual(num_courant, i + 1,
-                             "Après avoir choisi le joueur courant avec la fonction set_joueur_courant à " + str(
-                                 i + 1) +
-                             " la fonction get_num_joueur_courant retourne " + str(num_courant) +
-                             "\nCauses possibles: Participants, set_joueur_courant, get_joueur_courant")
+        for i in range(1, len(partis)):
+            for j in range(len(partis[i])):
+                participants.set_joueur_courant(partis[i], j + 1)
+                num_courant = participants.get_num_joueur_courant(partis[i])
+                self.assertEqual(num_courant, j + 1,
+                                 "Après avoir choisi le joueur courant avec la fonction set_joueur_courant à " +
+                                 str(j + 1) +
+                                 " la fonction get_num_joueur_courant retourne " + str(num_courant) +
+                                 "\nCauses possibles: Participants, set_joueur_courant, get_joueur_courant")
 
     def test_premier_joueur(self):
         partis = []
         for i in range(len(self.noms)):
             p = participants.Participants(self.noms[i], self.les_couleurs[i], self.humains[i])
             partis.append(p)
-        for i in range(len(partis)):
-            participants.init_premier_joueur(partis[i], i + 1)
-            num_premier = participants.get_num_premier_joueur(partis[i])
-            self.assertEqual(num_premier, i + 1,
-                             "Après avoir positionné le premier joueur avec la fonction init_premier_joueur à " + str(
-                                 i + 1) +
-                             " la fonction get_num_premier_joueur retourne " + str(num_premier) +
-                             "\nCauses possibles: Participants, init_premier_joueur, get_num_premier_joueur")
+        for i in range(1, len(partis)):
+            for j in range(len(partis[i])):
+                participants.init_premier_joueur(partis[i], j + 1)
+                num_premier = participants.get_num_premier_joueur(partis[i])
+                self.assertEqual(num_premier, j + 1,
+                                 "Après avoir positionné le premier joueur avec la fonction init_premier_joueur à "
+                                 + str(i + 1) +
+                                 " la fonction get_num_premier_joueur retourne " + str(num_premier) +
+                                 "\nCauses possibles: Participants, init_premier_joueur, get_num_premier_joueur")
 
     def test_ajouter_joueur(self):
         part = participants.Participants([], [])
@@ -122,7 +124,7 @@ class TestCaseJoueur(unittest.TestCase):
             participants.set_joueur_courant(partis[i], premier)
             num_j = participants.get_num_joueur_courant(partis[i])
             self.assertEqual(num_j, premier,
-                             "Après avoir créé la liste des participants avec les noms " + str(self.noms) +
+                             "Après avoir créé la liste des participants avec les noms " + str(self.noms[i + 1]) +
                              " et positionné le premier joueur à " + str(premier) +
                              " le numéro du joueur courant devrait être " + str(premier) +
                              " or la fonction get_num_joueur_courant retourne " + str(num_j) +
@@ -183,21 +185,23 @@ class TestCaseJoueur(unittest.TestCase):
             partis.append(p)
         for i in range(len(partis)):
             participants.mise_a_jour_surface(partis[i], self.surfaces)
-            classement=participants.classement_joueurs(partis[i])
+            classement = participants.classement_joueurs(partis[i])
             if classement != None:
-                self.assertEqual(len(classement),len(self.noms[i]),
-                                 "Le classement des participants créés à partir de "+ str(self.noms) +
-                                 "devrait contenir "+str(len(self.noms))+" joueurs or il en contient "+
-                                 str(len(classement))+
+                self.assertEqual(len(classement), len(self.noms[i]),
+                                 "Le classement des participants créés à partir de " + str(self.noms[i]) +
+                                 " devrait contenir " + str(len(self.noms[i])) + " joueurs or il en contient " +
+                                 str(len(classement)) +
                                  "\nCauses possibles: Participants, mise_a_jour_surface,classement_joueurs")
-                for j in range(len(classement)-1):
-                    self.assertGreaterEqual(participants.comparer(classement[j],classement[j+1]),0,
-                                    "Le classement des participants créés à partir de "+ str(self.noms[i]) +
-                                    " ayant pour couleur respective "+str(self.les_couleurs)+ " et les surfaces "+
-                                    str(self.surfaces)+ "contient deux joueurs qui ne sont pas triés dans bon ordre "+
-                                    "en position "+str(j)+"\n voici le classement "+str(classement)+
-                                    "\nCauses possibles: Participants, mise_a_jour_surface, comparer, classement_joueurs"
-                                    )
+                for j in range(len(classement) - 1):
+                    self.assertGreaterEqual(participants.comparer(classement[j], classement[j + 1]), 0,
+                                            "Le classement des participants créés à partir de " + str(self.noms[i]) +
+                                            " ayant pour couleur respective " + str(
+                                                self.les_couleurs) + " et les surfaces " + str(self.surfaces) +
+                                            " contient deux joueurs qui ne sont pas triés dans bon ordre " +
+                                            "en position " + str(j) + "\n voici le classement " + str(classement) +
+                                            "\nCauses possibles: Participants, mise_a_jour_surface, comparer, classement_joueurs"
+                                            )
+
 
 if __name__ == '__main__':
     unittest.main()
