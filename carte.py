@@ -25,7 +25,7 @@ def Carte(nord, est, sud, ouest, objet=0):
     :param objet: un entier positif indiquant si la carte possède un objet (0 indique l'absence d'objet)
     :return: la structure que vous avez choisie pour représenter les cartes avec comme couleur "aucune"
     """
-    ...
+    return {"murs":{"N":nord, "E":est, "S":sud, "O":ouest}, "objet":objet, "joueurs":[], "couleur":None}
 
 def est_valide(carte):
     """
@@ -34,8 +34,7 @@ def est_valide(carte):
     :param carte: une carte
     :return: un booléen indiquant si la carte est valide ou non
     """
-    ...
-
+    return len([x for x in carte["murs"].values() if x]) <= 2
 
 def mur_nord(carte):
     """
@@ -44,7 +43,7 @@ def mur_nord(carte):
     :param carte: une carte
     :return: True si il y a un mur au nord
     """
-    ...
+    return carte["murs"]["N"]
 
 
 def mur_sud(carte):
@@ -54,7 +53,7 @@ def mur_sud(carte):
     :param carte: une carte
     :return: True si il y a un mur au sud
     """
-    return carte["sud"]
+    return carte["murs"]["S"]
 
 
 def mur_est(carte):
@@ -64,7 +63,7 @@ def mur_est(carte):
     :param carte: une carte
     :return: True si il y a un mur à l'est
     """
-    return carte["est"]
+    return carte["murs"]["E"]
 
 
 def mur_ouest(carte):
@@ -74,7 +73,7 @@ def mur_ouest(carte):
     :param carte: une carte
     :return: True si il y a un mur à l'ouest
     """
-    return carte["ouest"]
+    return carte["murs"]["O"]
 
 
 def get_liste_joueurs(carte):
@@ -84,7 +83,7 @@ def get_liste_joueurs(carte):
     :param carte: une carte
     :return: une liste de joueurs
     """
-    return carte["pions"]
+    return carte["joueurs"]
 
 
 def set_liste_joueurs(carte, liste_joueurs):
@@ -95,7 +94,7 @@ def set_liste_joueurs(carte, liste_joueurs):
     :param liste_joueurs: la liste des joueurs à placer
     :return: cette fonction ne retourne rien mais modifie la carte
     """
-    ...
+    carte["joueurs"] = liste_joueurs
 
 
 def possede_joueur(carte, joueur):
@@ -106,7 +105,7 @@ def possede_joueur(carte, joueur):
     :param joueur: un joueur
     :return: True si le joueur est sur la carte False sinon
     """
-    ...
+    return joueur in carte["joueurs"]
 
 
 def get_objet(carte):
@@ -116,7 +115,7 @@ def get_objet(carte):
     :param carte: une carte
     :return: un entier positif
     """
-    ...
+    return carte["objet"]
 
 
 def poser_objet(carte, objet):
@@ -127,7 +126,7 @@ def poser_objet(carte, objet):
     :param objet: un entier positif (0 pour ne mettre aucun objet
     :return: cette fonction ne retourne rien mais modifie la carte
     """
-    ...
+    carte["objet"] = objet
 
 
 def prendre_objet(carte):
@@ -137,7 +136,7 @@ def prendre_objet(carte):
     :param carte: une carte
     :return: cette fonction ne retourne rien mais modifie la carte
     """
-    ...
+    carte["objet"] = 0
 
 
 def set_couleur(carte, couleur):
@@ -148,7 +147,7 @@ def set_couleur(carte, couleur):
     :param couleur: une couleur
     :return: cette fonction ne retourne rien mais modifie la carte
     """
-    ...
+    carte["couleur"] = couleur
 
 
 def get_couleur(carte):
@@ -158,7 +157,7 @@ def get_couleur(carte):
     :param carte: une carte
     :return: retourne la couleur de la carte
     """
-    ...
+    return carte["couleur"]
 
 
 def prendre_joueur(carte, joueur):
@@ -169,7 +168,9 @@ def prendre_joueur(carte, joueur):
     :param joueur: un joueur
     :return: cette fonction modifie la carte mais ne retourne rien
     """
-    ...
+    for i in range(len(carte["joueurs"])):
+        if carte["joueurs"][i] == joueur:
+            carte["joueurs"].pop(i)
 
 
 def poser_joueur(carte, joueur):
@@ -180,8 +181,8 @@ def poser_joueur(carte, joueur):
     :param joueur: le joueur à poser
     :return: cette fonction modifie la carte mais ne retourne rien
     """
-    ...
-
+    if not possede_joueur(carte, joueur):
+        carte["joueurs"].append(joueur)
 
 def tourner_horaire(carte):
     """
@@ -190,9 +191,14 @@ def tourner_horaire(carte):
     :param carte: une carte
     :return: cette fonction modifie la carte mais ne retourne rien
     """
-    ...
+    tmp = carte["murs"]["N"]
+    carte["murs"]["N"] = carte["murs"]["O"]
+    carte["murs"]["O"] = carte["murs"]["S"]
+    carte["murs"]["S"] = carte["murs"]["E"]
+    carte["murs"]["E"] = tmp
 
-    
+
+
 def tourner_antihoraire(carte):
     """
     fait tourner la carte dans le sens anti-horaire
@@ -200,8 +206,11 @@ def tourner_antihoraire(carte):
     :param carte: une carte
     :return: cette fonction modifie la carte mais ne retourne rien
     """
-    ...
-
+    tmp = carte["murs"]["N"]
+    carte["murs"]["N"] = carte["murs"]["E"]
+    carte["murs"]["E"] = carte["murs"]["S"]
+    carte["murs"]["S"] = carte["murs"]["O"]
+    carte["murs"]["O"] = tmp
     
 def tourner_aleatoire(carte):
     """
@@ -210,7 +219,10 @@ def tourner_aleatoire(carte):
     :param carte: une carte
     :return: cette fonction modifie la carte mais ne retourne rien
     """
-    ...
+    tours = random.randrange(1, 11)
+    for _ in range(tours):
+        tourner_horaire(carte)
+
 
 
 def coder_murs(carte):
@@ -226,7 +238,12 @@ def coder_murs(carte):
     :param carte: une carte
     :return: un entier indice du caractère semi-graphique de la carte
     """
-    ...
+    bN = 1 if mur_nord(carte) else 0
+    bE = 1 if mur_est(carte) else 0
+    bS = 1 if mur_sud(carte) else 0
+    bO = 1 if mur_ouest(carte) else 0
+    code = bO*2**3 + bS*2**2 + bE*2 + bN
+    return code
 
 
 def decoder_murs(carte, code):
@@ -237,7 +254,34 @@ def decoder_murs(carte, code):
     :param code: un entier codant les murs d'une carte
     :return: cette fonction modifie la carte mais ne retourne rien
     """
-    ...
+    bN = code % 2
+    bE = (code // 2) % 2
+    bS = ((code // 2) // 2) % 2
+    bO = (((code // 2) // 2) // 2) % 2
+
+    if bO == 1:
+        carte["murs"]["O"] = True
+    else:
+        if mur_ouest(carte):
+            carte["murs"]["O"] = False
+
+    if bS == 1:
+        carte["murs"]["S"] = True
+    else:
+        if mur_sud(carte):
+            carte["murs"]["S"] = False
+
+    if bE == 1:
+        carte["murs"]["E"] = True
+    else:
+        if mur_est(carte):
+            carte["murs"]["E"] = False
+
+    if bN == 1:
+        carte["murs"]["N"] = True
+    else:
+        if mur_nord(carte):
+            carte["murs"]["N"] = False
 
 
 def to_char(carte):
@@ -247,7 +291,7 @@ def to_char(carte):
     :param carte: une carte
     :return: un caractère semi graphique
     """
-    ...
+    return liste_cartes[coder_murs(carte)]
 
 
 def passage_nord(carte1, carte2):
@@ -259,7 +303,7 @@ def passage_nord(carte1, carte2):
     :param carte2: une autre carte
     :return: un booléen
     """
-    ...
+    return not mur_sud(carte2) and not mur_nord(carte1)
 
 
 def passage_sud(carte1, carte2):
@@ -271,7 +315,7 @@ def passage_sud(carte1, carte2):
     :param carte2: une autre carte
     :return: un booléen
     """
-    ...
+    return not mur_sud(carte1) and not mur_nord(carte2)
 
 
 def passage_ouest(carte1, carte2):
@@ -283,7 +327,7 @@ def passage_ouest(carte1, carte2):
     :param carte2: une autre carte
     :return: un booléen
     """
-    ...
+    return not mur_ouest(carte1) and not mur_est(carte2)
 
 
 def passage_est(carte1, carte2):
@@ -295,4 +339,4 @@ def passage_est(carte1, carte2):
     :param carte2: une autre carte
     :return: un booléen
     """
-    ...
+    return not mur_est(carte1) and not mur_ouest(carte2)
