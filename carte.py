@@ -25,7 +25,7 @@ def Carte(nord, est, sud, ouest, objet=0):
     :param objet: un entier positif indiquant si la carte possède un objet (0 indique l'absence d'objet)
     :return: la structure que vous avez choisie pour représenter les cartes avec comme couleur "aucune"
     """
-    return {"murs":{"N":nord, "E":est, "S":sud, "O":ouest}, "objet":objet, "joueurs":[], "couleur":None}
+    return {"murs":{"N":nord, "E":est, "S":sud, "O":ouest}, "objet":objet, "joueurs":[], "couleur":"aucune"}
 
 def est_valide(carte):
     """
